@@ -40,8 +40,18 @@ function gotPoses(results){
     }
 }
 
-function draw(){
+function draw()
     image(video, 0, 0, 600, 500);
+
+    fill("#1cff08");
+    stroke("#1cff08");
+    if(scoreLeftWrist > 0.2){
+        circle(leftWristX, leftWristY, 20);
+        InNumberleftWristY = Number(leftWristY);
+        remove_decimals = floor(InNumberleftWristY);
+        volume = remove_decimals/500;
+        document.getElementById("volume").innerHTML= " Volume = " + volume;
+        song.setVolume(volume);
 }
 
 function playSound(){
